@@ -2,4 +2,9 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="fiolet_button">#6C63FF</color>
+    <color name="custom_backround">#EFEFEF</color>
+    <color name="custom_backround_dark">#2E2E2E</color>
+
+
 </resources>
