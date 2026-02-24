@@ -1,163 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
 
-    <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/fragment_container"
+    <FrameLayout
+        android:id="@+id/frameLayout"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_weight="1"/>
 
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/menu_bar" />
-
-    <LinearLayout
-        android:id="@+id/menu_bar"
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNav"
         android:layout_width="match_parent"
-        android:layout_height="92dp"
-        android:background="@drawable/top_shadow"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        app:menu="@menu/bottom_menu"/>
 
-        >
-
-        <GridLayout
-            android:layout_width="74dp"
-            android:layout_height="match_parent"
-
-            android:columnCount="1"
-
-            >
-
-            <ImageButton
-                android:id="@+id/btn_main"
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:background="?attr/selectableItemBackgroundBorderless"
-                android:contentDescription="Загрузить папку"
-                android:src="@drawable/home_icon"
-                app:tint="@color/folder_tint_selector" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:text="дом"
-
-                android:textAlignment="center"
-
-
-                />
-
-
-        </GridLayout>
-
-        <GridLayout
-            android:layout_width="74dp"
-            android:layout_height="match_parent"
-
-            android:columnCount="1"
-
-            >
-
-            <ImageButton
-                android:id="@+id/btn_import"
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:background="?attr/selectableItemBackgroundBorderless"
-                android:contentDescription="Загрузить папку"
-                android:src="@drawable/import_icon"
-                app:tint="@color/folder_tint_selector" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:text="импорт"
-
-                android:textAlignment="center"
-
-
-                />
-
-
-        </GridLayout>
-
-
-
-        <GridLayout
-            android:layout_width="74dp"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="115dp"
-            android:columnCount="1"
-
-            >
-
-            <ImageButton
-                android:id="@+id/btn_profile"
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:background="?attr/selectableItemBackgroundBorderless"
-                android:contentDescription="Загрузить папку"
-                android:src="@drawable/profile_icon"
-                app:tint="@color/folder_tint_selector" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:text="профиль"
-
-                android:textAlignment="center"
-
-
-                />
-
-
-        </GridLayout>
-
-        <GridLayout
-            android:layout_width="74dp"
-            android:layout_height="match_parent"
-
-            android:columnCount="1"
-
-            >
-
-            <ImageButton
-                android:id="@+id/btn_history"
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:background="?attr/selectableItemBackgroundBorderless"
-                android:contentDescription="Загрузить папку"
-                android:src="@drawable/clock_icon"
-                app:tint="@color/folder_tint_selector" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:text="история"
-
-                android:textAlignment="center"
-
-
-                />
-
-
-        </GridLayout>
-
-
-    </LinearLayout>
-  <ImageButton
-      android:layout_width="60dp"
-      android:layout_height="60dp"
-      android:background="@drawable/shape_circle"
-      app:layout_constraintBottom_toBottomOf="parent"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintStart_toStartOf="parent"
-      android:layout_marginBottom="40dp"
-      android:src="@drawable/scan_icon"
-
-      />
-
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
