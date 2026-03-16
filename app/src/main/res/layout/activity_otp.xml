@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F6FA"
+    android:orientation="vertical"
+    android:padding="24dp">
+
+    <TextView
+        android:text="Почти готово"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        android:textColor="#222"
+        android:layout_marginTop="40dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:text="Пожалуйста, введите 6-значный код, отправленный на вашу электронную почту."
+        android:textSize="14sp"
+        android:textColor="#777"
+        android:layout_marginTop="12dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <!-- OTP поля -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/otp1"
+            style="@style/otpBox"/>
+
+        <EditText
+            android:id="@+id/otp2"
+            style="@style/otpBox"/>
+
+        <EditText
+            android:id="@+id/otp3"
+            style="@style/otpBox"/>
+
+        <EditText
+            android:id="@+id/otp4"
+            style="@style/otpBox"/>
+
+        <EditText
+            android:id="@+id/otp5"
+            style="@style/otpBox"/>
+
+        <EditText
+            android:id="@+id/otp6"
+            style="@style/otpBox"/>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnVerify"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:text="Проверить"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/bg_button"/>
+
+    <TextView
+        android:text="Не получили код?"
+        android:textStyle="bold"
+        android:layout_marginTop="40dp"
+        android:textColor="#222"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/tvResend"
+        android:text="Запросить новый код 00:30"
+        android:textColor="#777"
+        android:layout_gravity="center"
+        android:layout_marginTop="6dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>
