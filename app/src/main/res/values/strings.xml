@@ -2,4 +2,22 @@
     <string name="app_name">Antiplagiat</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="q">Добро пожаловать</string>
+    <string name="w">пароль</string>
+    <string name="e">Отмечая галочку, вы соглашаетесь с условиями использования.</string>
+    <string name="r">Войти</string>
+    <string name="t">Уже есть аккаунт? Войти</string>
+    <string name="_00_30">Запросить новый код 00:30</string>
+    <string name="y">Не получили код?</string>
+    <string name="u">Проверить</string>
+    <string name="_6">Пожалуйста, введите 6-значный код, отправленный на вашу электронную почту.</string>
+    <string name="o">Почти готово</string>
+    <string name="p">Добро пожаловать</string>
+    <string name="a">войдите в аккаунт</string>
+    <string name="enter_your_email">Enter your email</string>
+    <string name="password">Password</string>
+    <string name="s">Запомнить меня</string>
+    <string name="d">забыли пароль?</string>
+    <string name="f">Войти</string>
+    <string name="g">Новый пользователь? Зарегистрируйтесь сейчас</string>
 </resources>

@@ -7,7 +7,7 @@
     android:padding="24dp">
 
     <TextView
-        android:text="Почти готово"
+        android:text="@string/o"
         android:textSize="26sp"
         android:textStyle="bold"
         android:textColor="#222"
@@ -16,7 +16,7 @@
         android:layout_height="wrap_content"/>
 
     <TextView
-        android:text="Пожалуйста, введите 6-значный код, отправленный на вашу электронную почту."
+        android:text="@string/_6"
         android:textSize="14sp"
         android:textColor="#777"
         android:layout_marginTop="12dp"
@@ -60,14 +60,14 @@
         android:id="@+id/btnVerify"
         android:layout_width="match_parent"
         android:layout_height="56dp"
-        android:text="Проверить"
+        android:text="@string/u"
         android:textColor="@android:color/white"
         android:textSize="18sp"
         android:layout_marginTop="40dp"
         android:background="@drawable/bg_button"/>
 
     <TextView
-        android:text="Не получили код?"
+        android:text="@string/y"
         android:textStyle="bold"
         android:layout_marginTop="40dp"
         android:textColor="#222"
@@ -77,7 +77,7 @@
 
     <TextView
         android:id="@+id/tvResend"
-        android:text="Запросить новый код 00:30"
+        android:text="@string/_00_30"
         android:textColor="#777"
         android:layout_gravity="center"
         android:layout_marginTop="6dp"

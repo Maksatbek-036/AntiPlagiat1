@@ -9,7 +9,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Добро пожаловать"
+        android:text="@string/q"
         android:textSize="26sp"
         android:textStyle="bold"
         android:textColor="#333"
@@ -19,6 +19,7 @@
         android:id="@+id/imgLogo"
         android:layout_width="260dp"
         android:layout_height="260dp"
+        android:contentDescription="@string/q"
         android:src="@drawable/aza"
         android:scaleType="centerInside"/>
 

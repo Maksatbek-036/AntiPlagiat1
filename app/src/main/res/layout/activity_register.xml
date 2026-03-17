@@ -95,7 +95,7 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etPassword"
-                android:hint="пароль"
+                android:hint="@string/w"
                 android:inputType="textPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
@@ -103,7 +103,7 @@
 
         <CheckBox
             android:id="@+id/checkTerms"
-            android:text="Отмечая галочку, вы соглашаетесь с условиями использования."
+            android:text="@string/e"
             android:layout_marginBottom="40dp"
             android:layout_width="match_parent"
             android:layout_height="35dp"/>
@@ -112,16 +112,16 @@
             android:id="@+id/btnRegister"
             android:layout_width="match_parent"
             android:layout_height="56dp"
-            android:text="Войти"
+            android:text="@string/r"
             android:textAllCaps="false"
-            android:textSize="28dp"
+            android:textSize="28sp"
             android:textColor="@android:color/white"
             android:backgroundTint="@color/fiolet"
             android:layout_marginBottom="16dp"/>
 
         <TextView
             android:id="@+id/tvLogin"
-            android:text="Уже есть аккаунт? Войти"
+            android:text="@string/t"
             android:textColor="#6C63FF"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
