@@ -1,5 +1,6 @@
                 package com.example.myapplication
 
+import TestFragment
 import android.annotation.SuppressLint
 import android.graphics.Color
 import android.os.Bundle
@@ -13,6 +14,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
 import com.example.myapplication.databinding.ActivityMainBinding
 
+
                 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private lateinit var ft: FragmentTransaction
@@ -23,11 +25,10 @@ import com.example.myapplication.databinding.ActivityMainBinding
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.btnMain.setOnClickListener {
-           selectTab(it)
-fragment= TestFragment()
-            setNewFragment(fragment)
-        }
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.container, TestFragment())
+            .commit()
+
         binding.btnImport.setOnClickListener { selectTab(it) }
         binding.btnHistory.setOnClickListener { selectTab(it) }
         binding.btnProfile.setOnClickListener { selectTab(it) }

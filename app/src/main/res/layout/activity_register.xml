@@ -17,7 +17,7 @@
         <ImageView
             android:layout_width="90dp"
             android:layout_height="60dp"
-            android:src="@drawable/ic_shield"
+            android:src="@drawable/aas"
             android:layout_marginTop="60dp"
             android:layout_marginBottom="24dp"/>
 
@@ -43,7 +43,7 @@
             android:layout_width="match_parent"
             android:layout_height="45dp"
             android:layout_marginBottom="16dp"
-            app:endIconDrawable="@drawable/ic_person">
+            app:endIconDrawable="@drawable/user">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etName"
@@ -59,7 +59,7 @@
             android:layout_width="match_parent"
             android:layout_height="45dp"
             android:layout_marginBottom="16dp"
-            app:endIconDrawable="@drawable/ic_email">
+            app:endIconDrawable="@drawable/mail">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etEmail"
@@ -75,7 +75,7 @@
             android:layout_width="match_parent"
             android:layout_height="45dp"
             android:layout_marginBottom="16dp"
-            app:endIconDrawable="@drawable/ic_phone">
+            app:endIconDrawable="@drawable/profile_icon">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etPhone"

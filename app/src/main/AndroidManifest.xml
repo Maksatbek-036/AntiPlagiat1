@@ -13,6 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
         <activity
+            android:name=".fragment_test"
+            android:exported="false" />
+        <activity
             android:name=".activity_splash"
             android:exported="false" />
         <activity

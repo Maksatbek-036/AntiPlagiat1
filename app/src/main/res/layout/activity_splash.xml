@@ -19,7 +19,7 @@
         android:id="@+id/imgLogo"
         android:layout_width="260dp"
         android:layout_height="260dp"
-        android:src="@drawable/welcome_logo"
+        android:src="@drawable/aza"
         android:scaleType="centerInside"/>
 
 </LinearLayout>
