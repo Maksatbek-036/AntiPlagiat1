@@ -26,7 +26,7 @@ import com.example.myapplication.databinding.ActivityMainBinding
         setContentView(binding.root)
 
         supportFragmentManager.beginTransaction()
-            .replace(R.id.container, TestFragment())
+            .replace(R.id.fragment_container, TestFragment())
             .commit()
 
         binding.btnImport.setOnClickListener { selectTab(it) }

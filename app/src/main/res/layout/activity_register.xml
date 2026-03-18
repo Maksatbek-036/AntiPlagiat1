@@ -4,8 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="#F5F6FA"
-    tools:context="RegisterActivity">
+
+    tools:context=".RegisterActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -25,7 +25,7 @@
             android:text="Начать"
             android:textSize="24sp"
             android:textStyle="bold"
-            android:textColor="#222222"
+
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
@@ -47,10 +47,10 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etName"
-                android:hint="имя"
-                android:inputType="textPersonName"
                 android:layout_width="match_parent"
-                android:layout_height="36dp"/>
+                android:layout_height="36dp"
+                android:hint="имя"
+                android:inputType="textPersonName" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <!-- Email -->
@@ -81,8 +81,9 @@
                 android:id="@+id/etPhone"
                 android:hint="номер телефона"
                 android:inputType="phone"
+
                 android:layout_width="match_parent"
-                android:layout_height="36dp"/>
+                android:layout_height="wrap_content"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <!-- Пароль -->
@@ -115,7 +116,7 @@
             android:text="@string/r"
             android:textAllCaps="false"
             android:textSize="28sp"
-            android:textColor="@android:color/white"
+android:textColor="@color/white"
             android:backgroundTint="@color/fiolet"
             android:layout_marginBottom="16dp"/>
 

@@ -7,10 +7,10 @@
     <string name="e">Отмечая галочку, вы соглашаетесь с условиями использования.</string>
     <string name="r">Войти</string>
     <string name="t">Уже есть аккаунт? Войти</string>
-    <string name="_00_30">Запросить новый код 00:30</string>
+    <string name="code_timer">Запросить новый код 00:30</string>
     <string name="y">Не получили код?</string>
     <string name="u">Проверить</string>
-    <string name="_6">Пожалуйста, введите 6-значный код, отправленный на вашу электронную почту.</string>
+    <string name="six_digit_code">Пожалуйста, введите 6-значный код, отправленный на вашу электронную почту.</string>
     <string name="o">Почти готово</string>
     <string name="p">Добро пожаловать</string>
     <string name="a">войдите в аккаунт</string>
