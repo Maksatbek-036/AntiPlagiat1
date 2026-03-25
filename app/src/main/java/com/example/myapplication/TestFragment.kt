@@ -5,55 +5,81 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.myapplication.adapter.DocumentAdapter
+import com.example.myapplication.databinding.FragmentTestBinding
+import com.example.myapplication.model.Document
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [TestFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class TestFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    private lateinit var binding: FragmentTestBinding
+    private lateinit var adapter: DocumentAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_test, container, false)
+        binding = FragmentTestBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment TestFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            TestFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        setupRecyclerView()
+        loadData()
+    }
+
+    private fun setupRecyclerView() {
+        adapter = DocumentAdapter(emptyList())
+        binding.recyclerViewDocuments.apply {
+            layoutManager = LinearLayoutManager(requireContext())
+            adapter = this@TestFragment.adapter
+        }
+    }
+
+    private fun loadData() {
+        val documents = listOf(
+            Document(
+                title = "Курсовая работа по...",
+                date = "1 янв 2026",
+                time = "14:32",
+                words = "2 345 слов",
+                percentage = 97
+            ),
+            Document(
+                title = "Статья для публикации",
+                date = "1 янв 2026",
+                time = "09:15",
+                words = "1 023 слов",
+                percentage = 92
+            ),
+            Document(
+                title = "Реферат по истории",
+                date = "28 дек 2025",
+                time = "16:45",
+                words = "3 256 слов",
+                percentage = 48
+            ),
+            Document(
+                title = "Дипломная работа...",
+                date = "25 дек 2025",
+                time = "11:22",
+                words = "8 932 слов",
+                percentage = 65
+            ),
+            Document(
+                title = "Эссе по философии",
+                date = "20 дек 2025",
+                time = "09:50",
+                words = "1 876 слов",
+                percentage = 84
+            )
+        )
+
+        binding.tvVerifications.text = "5"
+        binding.tvAverage.text = "78%"
+        binding.tvTotalWords.text = "18,4K"
+
+        adapter.updateData(documents)
     }
 }
