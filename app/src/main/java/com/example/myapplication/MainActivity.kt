@@ -19,18 +19,11 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.btnMain.setOnClickListener {
-            selectTab(it)
-            currentFragment = TestFragment()
-            setNewFragment(currentFragment!!)
-        }
-        binding.btnImport.setOnClickListener { selectTab(it) }
-        binding.btnHistory.setOnClickListener {
-            selectTab(it)
-            currentFragment = TestFragment()
-            setNewFragment(currentFragment!!)
-        }
-        binding.btnProfile.setOnClickListener { selectTab(it) }
+      binding.btnHistory.setOnClickListener {
+          selectTab(it)
+          setNewFragment(HistoryFragment())
+
+      }
     }
 
     @SuppressLint("SuspiciousIndentation")

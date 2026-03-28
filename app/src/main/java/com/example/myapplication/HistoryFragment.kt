@@ -10,7 +10,7 @@ import com.example.myapplication.adapter.DocumentAdapter
 import com.example.myapplication.databinding.FragmentTestBinding
 import com.example.myapplication.model.Document
 
-class TestFragment : Fragment() {
+class HistoryFragment : Fragment() {
 
     private lateinit var binding: FragmentTestBinding
     private lateinit var adapter: DocumentAdapter
@@ -33,7 +33,7 @@ class TestFragment : Fragment() {
         adapter = DocumentAdapter(emptyList())
         binding.recyclerViewDocuments.apply {
             layoutManager = LinearLayoutManager(requireContext())
-            adapter = this@TestFragment.adapter
+            adapter = this@HistoryFragment.adapter
         }
     }
 
