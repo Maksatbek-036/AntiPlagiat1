@@ -9,7 +9,7 @@
     android:background="#F5F5F5">
 
 
-    <!-- Header -->
+
     <RelativeLayout
         android:id="@+id/header"
         android:layout_width="0dp"
@@ -27,7 +27,6 @@
             android:layout_marginStart="8dp"
             android:background="@drawable/ctrelra"
             android:src="@android:color/transparent"
-
             />
 
         <TextView
@@ -80,7 +79,7 @@
             android:text="URL" />
     </com.google.android.material.button.MaterialButtonToggleGroup>
 
-    <!-- Блок загрузки файла -->
+
     <LinearLayout
         android:id="@+id/cFile"
         android:layout_width="match_parent"
@@ -95,7 +94,7 @@
             android:layout_height="84dp"
             android:layout_marginStart="5dp"
             android:layout_marginTop="-30dp"
-            android:src="@drawable/cloud" />
+            android:src="@drawable/vttt" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -108,12 +107,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="2dp"
-            android:text="DOC, DOCX, PDF, TXT до 10 Мб"
+            android:text="DOC, DOCX, TXT до 10 Мб"
             android:textColor="#888888"
             android:textSize="12sp" />
     </LinearLayout>
 
-    <!-- Блок ввода URL -->
+
     <LinearLayout
         android:id="@+id/cURL"
         android:layout_width="match_parent"
@@ -132,6 +131,7 @@
             android:textStyle="bold" />
 
         <EditText
+            android:id="@+id/inputUrl"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginTop="8dp"
@@ -148,7 +148,7 @@
 
 
 
-    <!-- Контейнер для вкладки ТЕКСТ -->
+
     <LinearLayout
         android:id="@+id/cText"
         android:layout_width="match_parent"
@@ -190,7 +190,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="-220dp"/>
 
-    <!-- Параметры проверки -->
+
     <LinearLayout
         android:id="@+id/checkOptions"
         android:layout_width="0dp"
@@ -237,13 +237,13 @@
             android:textSize="12sp"/>
     </LinearLayout>
 
-    <!-- Кнопка Начать проверку -->
     <Button
         android:id="@+id/startButton"
         android:layout_width="360dp"
         android:layout_height="48dp"
         android:text="Начать проверку"
-        android:background="@drawable/corner"
+        android:background="@drawable/buttback"
+        app:backgroundTint="@null"
         android:textColor="#FFF"
         android:textAllCaps="false"
         android:layout_marginTop="20dp"
