@@ -9,13 +9,11 @@ local.properties
 # Log files
 *.log
 
-# Android Studio
+# Android Studio / IntelliJ
 .idea/
 *.iml
-
-# Keystore files
-*.jks
-*.keystore
+*.ipr
+*.iws
 
 # External native build folders
 .cxx/
@@ -24,9 +22,9 @@ local.properties
 captures/
 output.json
 
-# IntelliJ
-*.ipr
-*.iws
+# Keystore files (do not share in repo!)
+*.jks
+*.keystore
 
 # Misc
 .DS_Store
