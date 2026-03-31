@@ -1,4 +1,6 @@
+
 import org.gradle.kotlin.dsl.invoke
+
 
 plugins {
     alias(libs.plugins.android.application)
@@ -6,6 +8,7 @@ plugins {
 }
 
 android {
+
     namespace = "com.example.myapplication"
     compileSdk {
         version = release(36)
@@ -13,7 +16,8 @@ android {
 
     defaultConfig {
         applicationId = "com.example.myapplication"
-        minSdk = 24
+
+        minSdk = 26
         targetSdk = 36
         versionCode = 1
         versionName = "1.0"
@@ -31,23 +35,27 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = JavaVersion.VERSION_21
+        targetCompatibility = JavaVersion.VERSION_21
     }
+
+
     buildFeatures {
         viewBinding =true
     }
-    kotlinOptions {
-        jvmTarget = "11"
-    }
+
+
 }
 
 dependencies {
+
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
+
     implementation(libs.core.ktx)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
@@ -59,4 +67,10 @@ dependencies {
 
     // Логирование запросов (полезно при разработке)
     implementation("com.squareup.okhttp3:logging-interceptor:4.12.0")
+
+
+    implementation("org.apache.poi:poi:5.2.3")
+    implementation("org.apache.poi:poi-ooxml:5.2.3")
+
+
 }

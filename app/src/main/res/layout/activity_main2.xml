@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:id="@+id/main"
+    android:background="#F5F5F5">
+
+
+
+    <RelativeLayout
+        android:id="@+id/header"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:background="@drawable/corner"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <Button
+            android:id="@+id/back1"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/ctrelra"
+            android:src="@android:color/transparent"
+            />
+
+        <TextView
+            android:id="@+id/headerTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Загрузка документа"
+            android:textSize="16sp"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:textColor="#000" />
+    </RelativeLayout>
+
+
+    <com.google.android.material.button.MaterialButtonToggleGroup
+        android:id="@+id/tabs"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="30dp"
+        android:padding="8dp"
+        app:singleSelection="true"
+        app:selectionRequired="true"
+        android:background="@drawable/circle"
+        app:layout_constraintTop_toBottomOf="@id/header"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/bText"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Текст" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/bFile"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Файл" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/bURL"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="URL" />
+    </com.google.android.material.button.MaterialButtonToggleGroup>
+
+
+    <LinearLayout
+        android:id="@+id/cFile"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/corner"
+        android:orientation="vertical"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/tabs">
+        <ImageView
+            android:layout_width="84dp"
+            android:layout_height="84dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="-30dp"
+            android:src="@drawable/vttt" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:text="Загрузите документ"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="DOC, DOCX, TXT до 10 Мб"
+            android:textColor="#888888"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/cURL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/tabs">
+
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Введите URL документа"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/inputUrl"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/corner"
+            android:hint="https://example.com/doc.pdf"
+            android:padding="12dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="36dp"
+            android:text="Введите прямую ссылку на текстовый документ"
+       />
+    </LinearLayout>
+
+
+
+
+    <LinearLayout
+        android:id="@+id/cText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="visible"
+        app:layout_constraintTop_toBottomOf="@id/tabs">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Введите текст для проверки"
+            android:textStyle="bold"
+            android:layout_marginTop="20dp"/>
+
+        <EditText
+            android:id="@+id/inputText"
+            android:layout_width="match_parent"
+            android:layout_height="190dp"
+            android:background="@drawable/corner"
+            android:hint="Вставьте или введите текст здесь..."
+            android:padding="12dp"
+            android:gravity="top"
+            android:layout_marginTop="8dp"
+            />
+
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/minSymbols"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Минимум 50 символов"
+        android:textSize="12sp"
+        android:textColor="#888"
+        app:layout_constraintTop_toBottomOf="@id/checkOptions"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="-220dp"/>
+
+
+    <LinearLayout
+        android:id="@+id/checkOptions"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/corner"
+        android:layout_marginTop="-250dp"
+        app:layout_constraintTop_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Параметры проверки"
+            android:textSize="14sp"
+            android:textColor="#444"
+            android:layout_marginStart="15dp"
+            android:paddingBottom="4dp"/>
+
+        <CheckBox
+            android:id="@+id/checkQuotes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Проверять цитаты"
+            android:checked="true"
+            android:layout_marginStart="25dp"
+            android:textSize="12sp"/>
+
+        <CheckBox
+            android:id="@+id/checkIgnoreSources"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Игнорировать источники"
+            android:layout_marginStart="25dp"
+            android:textSize="12sp"/>
+
+        <CheckBox
+            android:id="@+id/checkDeepSearch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Глубокий поиск"
+            android:layout_marginStart="25dp"
+            android:textSize="12sp"/>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/startButton"
+        android:layout_width="360dp"
+        android:layout_height="48dp"
+        android:text="Начать проверку"
+        android:background="@drawable/buttback"
+        app:backgroundTint="@null"
+        android:textColor="#FFF"
+        android:textAllCaps="false"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintTop_toBottomOf="@id/checkOptions"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

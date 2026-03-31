@@ -1,4 +1,5 @@
 <resources>
+
     <string name="app_name">Antiplagiat</string>
     <string name="hello_blank_fragment">История проверок</string>
     <!-- TODO: Remove or change this placeholder text -->
@@ -21,4 +22,8 @@
     <string name="d">забыли пароль?</string>
     <string name="f">Войти</string>
     <string name="g">Новый пользователь? Зарегистрируйтесь сейчас</string>
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+
 </resources>

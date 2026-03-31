@@ -8,6 +8,7 @@
     tools:context=".MainActivity">
 
     <androidx.fragment.app.FragmentContainerView
+
         android:id="@+id/fragment_container"
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -20,9 +21,11 @@
         android:layout_height="92dp"
         android:background="@drawable/top_shadow"
         android:orientation="horizontal"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
+
 
         <GridLayout
             android:layout_width="74dp"
@@ -124,5 +127,6 @@
         android:src="@drawable/scan_icon"
 
         />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

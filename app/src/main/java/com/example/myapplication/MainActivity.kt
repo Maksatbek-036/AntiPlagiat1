@@ -8,6 +8,8 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
 import com.example.myapplication.databinding.ActivityMainBinding
 
+
+
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private lateinit var ft: FragmentTransaction
@@ -18,7 +20,8 @@ class MainActivity : AppCompatActivity() {
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
+    binding.btnMain.setOnClickListener { selectTab(it)
+setNewFragment(FirstFragment())}
       binding.btnHistory.setOnClickListener {
           selectTab(it)
           setNewFragment(HistoryFragment())
