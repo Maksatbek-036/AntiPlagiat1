@@ -1,33 +1,31 @@
 package com.example.myapplication
 
-import android.annotation.SuppressLint
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
-import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 import com.google.android.material.button.MaterialButtonToggleGroup
 import java.io.File
 
-class MainActivity2 : AppCompatActivity() {
+class ImportFragment : Fragment() {
 
     private val openFileLauncher = registerForActivityResult(
         ActivityResultContracts.GetContent()
     ) { uri: Uri? ->
         uri?.let {
-            Toast.makeText(this, "Файл выбран: $it", Toast.LENGTH_SHORT).show()
+            Toast.makeText(requireContext(), "Файл выбран: $it", Toast.LENGTH_SHORT).show()
 
-            // Преобразуем Uri в File
             val file = File(uri.path ?: return@let)
 
-            // Определяем расширение
             val text = when {
                 file.name.endsWith(".docx") -> DocReader.readDocx(file)
-
                 else -> ""
             }
 
@@ -37,33 +35,35 @@ class MainActivity2 : AppCompatActivity() {
                 val percentage = (similarity * 100).toInt()
                 val wordCount = text.split("\\s+".toRegex()).size
 
-                val intent = Intent(this, MainActivity3::class.java).apply {
+                val intent = Intent(requireContext(), MainActivity3::class.java).apply {
                     putExtra("percentage", percentage)
                     putExtra("wordCount", wordCount)
                     putExtra("sources", 3)
                 }
                 startActivity(intent)
             } else {
-                Toast.makeText(this, "Неподдерживаемый формат файла", Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireContext(), "Неподдерживаемый формат файла", Toast.LENGTH_SHORT).show()
             }
         }
     }
 
-    @SuppressLint("MissingInflatedId")
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main2)
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
+        val view = inflater.inflate(R.layout.activity_main2, container, false)
 
-        val backbut: Button = findViewById(R.id.back1)
-        backbut.setOnClickListener { finish() }
+        val backbut: Button = view.findViewById(R.id.back1)
+        backbut.setOnClickListener { activity?.finish() }
 
-        val toggleGroup = findViewById<MaterialButtonToggleGroup>(R.id.tabs)
-        val conText = findViewById<View>(R.id.cText)
-        val conFile = findViewById<View>(R.id.cFile)
-        val conURL = findViewById<View>(R.id.cURL)
+        val toggleGroup = view.findViewById<MaterialButtonToggleGroup>(R.id.tabs)
+        val conText = view.findViewById<View>(R.id.cText)
+        val conFile = view.findViewById<View>(R.id.cFile)
+        val conURL = view.findViewById<View>(R.id.cURL)
 
-        val inputText = findViewById<EditText>(R.id.inputText)
-        val urlInput = findViewById<EditText>(R.id.inputUrl)
+        val inputText = view.findViewById<EditText>(R.id.inputText)
+        val urlInput = view.findViewById<EditText>(R.id.inputUrl)
 
         conText.visibility = View.VISIBLE
         conFile.visibility = View.GONE
@@ -86,7 +86,7 @@ class MainActivity2 : AppCompatActivity() {
             openFileLauncher.launch("*/*")
         }
 
-        val startButton = findViewById<Button>(R.id.startButton)
+        val startButton = view.findViewById<Button>(R.id.startButton)
         startButton.setOnClickListener {
             when (toggleGroup.checkedButtonId) {
                 R.id.bURL -> {
@@ -94,7 +94,7 @@ class MainActivity2 : AppCompatActivity() {
                     if (url.isNotEmpty()) {
                         openWebPage(url)
                     } else {
-                        Toast.makeText(this, "Введите адрес сайта", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(requireContext(), "Введите адрес сайта", Toast.LENGTH_SHORT).show()
                     }
                 }
                 R.id.bFile -> {
@@ -108,18 +108,20 @@ class MainActivity2 : AppCompatActivity() {
                         val percentage = (similarity * 100).toInt()
                         val wordCount = text.split("\\s+".toRegex()).size
 
-                        val intent = Intent(this, MainActivity3::class.java).apply {
+                        val intent = Intent(requireContext(), MainActivity3::class.java).apply {
                             putExtra("percentage", percentage)
                             putExtra("wordCount", wordCount)
                             putExtra("sources", 3)
                         }
                         startActivity(intent)
                     } else {
-                        Toast.makeText(this, "Введите текст", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(requireContext(), "Введите текст", Toast.LENGTH_SHORT).show()
                     }
                 }
             }
         }
+
+        return view
     }
 
     private fun openWebPage(url: String) {

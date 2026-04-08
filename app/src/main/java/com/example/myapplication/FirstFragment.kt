@@ -19,9 +19,10 @@ class FirstFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         view.findViewById<Button>(R.id.begi).setOnClickListener {
-            val intent = Intent(requireActivity(),
-                MainActivity2::class.java)
-            startActivity(intent)
+     requireActivity().supportFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, ImportFragment())
+                .addToBackStack(null)
+                .commit()
         }
     }
 

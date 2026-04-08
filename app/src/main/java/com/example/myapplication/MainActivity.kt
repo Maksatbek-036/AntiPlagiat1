@@ -20,14 +20,24 @@ class MainActivity : AppCompatActivity() {
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        if (savedInstanceState == null) {
+            supportFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, FirstFragment())
+                .commit()
+        }
+
     binding.btnMain.setOnClickListener { selectTab(it)
-setNewFragment(FirstFragment())}
+    setNewFragment(FirstFragment())}
       binding.btnHistory.setOnClickListener {
           selectTab(it)
-          setNewFragment(HistoryFragment())
-
-      }
+          setNewFragment(HistoryFragment()) }
+        binding.btnImport.setOnClickListener {
+          selectTab(it)
+          setNewFragment(ImportFragment())  }
     }
+
+
+
 
     @SuppressLint("SuspiciousIndentation")
     private fun selectTab(selectedButton: View) {
